@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Salário Líquido</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h1 class="text-center">Cálculo de Salário Líquido</h1>
+    <br />
+    <form>
+      <div class="row">
+        <!-- Conent centralization -->
+        <div class="col-4"></div>
+
+        <div class="text-center col-4">
+          <div class="form-group">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">R$</div>
+              </div>
+              <input
+                id="salary"
+                type="text"
+                class="form-control"
+                placeholder="Salário bruto"
+              />
+            </div>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">R$</div>
+              </div>
+              <input
+                id="otherDeductions"
+                type="text"
+                class="form-control"
+                placeholder="Outros descontos"
+              />
+            </div>
+            <div class="input-group">
+              <input
+                id="dependents"
+                type="text"
+                class="form-control"
+                placeholder="Qtde. de dependentes"
+              />
+            </div>
+          </div>
+          <div class="observation">
+            <p>
+              <span class="asterisk">*</span> Preencha todos os campos acima
+              antes de efetuar o cálculo.
+            </p>
+            <p>
+              <span class="asterisk">*</span> Utilize "." (ponto) para separar a
+              parte inteira da decimal.
+            </p>
+          </div>
+          <div class="row">
+            <div class="btn-group col-6">
+              <button id="clearTextFields" class="btn btn-info">Limpar</button>
+            </div>
+            <div class="btn-group col-6">
+              <input
+                type="submit"
+                id="calculatePayroll"
+                class="btn btn-success"
+                value="Calcular"
+              />
+            </div>
+          </div>
+          <br />
+        </div>
+
+        <!-- Conent centralization -->
+        <div class="col-4"></div>
+      </div>
+    </form>
+    <div class="row">
+      <!-- Conent centralization -->
+      <div class="col-4"></div>
+
+      <div class="text-center col-4">
+        <table class="table table-bordered table-hover table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Evento</th>
+              <th scope="col">Provento</th>
+              <th scope="col">Desconto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Salário Bruto</td>
+              <td id="payroll_salary">-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>INSS</td>
+              <td>-</td>
+              <td id="payroll_inssDeduction">-</td>
+            </tr>
+            <tr>
+              <td>IRRF</td>
+              <td>-</td>
+              <td id="payroll_irrfDeduction">-</td>
+            </tr>
+            <tr>
+              <td>Outros Descontos</td>
+              <td>-</td>
+              <td id="payroll_otherDeductions">-</td>
+            </tr>
+            <tr>
+              <th scope="row">Totais</th>
+              <td id="payroll_totalEarnings">-</td>
+              <td id="payroll_totalDeductions">-</td>
+            </tr>
+            <tr>
+              <th scope="row">Salário Líquido</th>
+              <td id="payroll_netSalary" colspan="2">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Conent centralization -->
+      <div class="col-4"></div>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
